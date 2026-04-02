@@ -14,7 +14,7 @@ const App = () => {
   });
   const [answers, setAnswers] = useState([]);
 
-  // 인스타그램 커뮤니티 링크
+  // 인스타그램 커뮤니티 링크 (PT맵)
   const COMMUNITY_URL = "https://www.instagram.com/the.pt.map?igsh=MWIwOTV2OTY1Y2loaw==";
 
   const questions = [
@@ -125,20 +125,23 @@ const App = () => {
       title: "뇌와 소통하는 마법사",
       type: "NS (신경계 재활)",
       desc: "당신은 인체의 복잡한 신경망을 이해하고, 환자의 아주 작은 변화에서도 큰 보람을 찾는 섬세한 탐구자입니다. 대학병원이나 재활전문병원에서 뇌신경계 환자들의 기적을 함께 만들어갈 상이군요!",
+      tags: ["#뇌와밀당", "#섬세함끝판왕", "#재활장인", "#뇌섹물치사"],
       icon: <Brain className="w-16 h-16 text-indigo-600" />,
       color: "bg-indigo-50"
     },
     os: {
-      title: "통증 사냥꾼",
+      title: "근육 연금술사",
       type: "OS (정형계/도수치료)",
       desc: "당신은 확실한 테크닉과 빠른 피드백을 선호하는 실전 해결사입니다. 환자의 통증을 즉각적으로 잡아내는 '손맛' 좋은 치료사로 이름을 날릴 확률이 높습니다. 로컬 정형외과의 에이스가 될 준비 되셨나요?",
+      tags: ["#근육박사", "#손맛장인", "#도수치료의신", "#근육풀어주는사람"],
       icon: <Activity className="w-16 h-16 text-blue-600" />,
       color: "bg-blue-50"
     },
     research: {
       title: "논문 읽는 전략가",
       type: "대학원생 / 연구원",
-      desc: "당신은 '왜?'라는 질문을 멈추지 않는 근거 중심의 완벽주의자입니다. 임상도 좋지만, 이론을 체계화하고 새로운 지식을 발견하는 데 더 큰 희열을 느깁니다. 미래의 물리치료학계를 이끌 교수의 싹이 보입니다!",
+      desc: "당신은 '왜?'라는 질문을 멈추지 않는 근거 중심의 완벽주의자입니다. 임상도 좋지만, 이론을 체계화하고 새로운 지식을 발견하는 데 더 큰 희열을 느낍니다. 미래의 물리치료학계를 이끌 교수의 싹이 보입니다!",
+      tags: ["#대학원이체질", "#교수찰떡", "#논문은나의운명", "#학구열폭발"],
       icon: <BookOpen className="w-16 h-16 text-emerald-600" />,
       color: "bg-emerald-50"
     },
@@ -146,6 +149,7 @@ const App = () => {
       title: "필드의 에너자이저",
       type: "스포츠 트레이너",
       desc: "당신은 한계를 돌파하고 퍼포먼스를 극대화하는 역동적인 현장을 즐깁니다. 병원 안보다는 푸른 잔디 위, 선수들과 함께 호흡하며 부상을 관리해주는 의무팀 트레이너가 당신의 천직입니다!",
+      tags: ["#필드지배자", "#선수들의히어로", "#스포츠가답이다", "#체력왕"],
       icon: <Dumbbell className="w-16 h-16 text-rose-600" />,
       color: "bg-rose-50"
     },
@@ -153,6 +157,7 @@ const App = () => {
       title: "갓생 보건관리자",
       type: "산업체 물리치료사",
       desc: "당신은 병원이라는 틀을 벗어나 더 넓은 시스템을 설계하고 싶은 야망가입니다. 기업의 근로 환경을 관리하고 헬스케어 비즈니스를 기획하는 대기업 보건관리자나 스타트업이 당신의 무대입니다!",
+      tags: ["#사원증플렉스", "#갓생러", "#병원밖은즐거워", "#보건관리자의삶"],
       icon: <Building2 className="w-16 h-16 text-slate-600" />,
       color: "bg-slate-50"
     },
@@ -160,6 +165,7 @@ const App = () => {
       title: "일상의 지킴이",
       type: "루틴 치료사 (의원/안정형)",
       desc: "당신은 안정적인 환경에서 성실하게 환자들의 삶의 질을 유지해주는 든든한 수호자입니다. 워라밸을 지키며 지역사회 이웃들의 평화로운 일상을 돕는 따뜻하고 실속 있는 프로 치료사의 길을 걷겠군요!",
+      tags: ["#평화수호자", "#워라밸장인", "#칼퇴의전설", "#일상의소중함"],
       icon: <Coffee className="w-16 h-16 text-cyan-600" />,
       color: "bg-cyan-50"
     }
@@ -230,9 +236,9 @@ const App = () => {
               <Activity className="w-12 h-12 text-indigo-700 -rotate-12" />
             </div>
             <h1 className="text-3xl font-black mb-4 text-slate-900 break-keep">물리치료사 진로 성향 테스트</h1>
-            <p className="text-slate-500 mb-10 break-keep leading-relaxed">
+            <p className="text-slate-500 mb-10 break-keep leading-relaxed text-lg">
               나는 어떤 물리치료사가 될까?<br />
-              NS / OS / 루틴 / 대학원,연구원 / 산업체 / 스포츠
+              <span className="font-bold text-indigo-800 text-sm">NS / OS / 루틴 / 대학원 / 산업체 / 스포츠</span>
             </p>
             <button
               onClick={() => setStep('quiz')}
@@ -240,7 +246,7 @@ const App = () => {
             >
               테스트 시작하기
             </button>
-            <p className="mt-6 text-sm text-slate-400 font-medium">총 10문항 | @the.pt.map</p>
+            <p className="mt-6 text-sm text-slate-400 font-medium tracking-widest uppercase">10 Questions | @the.pt.map</p>
           </div>
         )}
 
@@ -283,20 +289,31 @@ const App = () => {
         {step === 'result' && (
           <div className="flex-1 flex flex-col p-6 overflow-y-auto">
             <div className="text-center mb-8">
-              <div className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-black mb-3 tracking-widest">PT MAP 진단결과 🔍</div>
+              <div className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-black mb-3 tracking-widest uppercase">PT MAP 진단결과 🔍</div>
               <h2 className="text-3xl font-black text-slate-900 leading-tight break-keep">
                 {resultData[getResult()].title}
               </h2>
             </div>
 
-            <div className={`rounded-3xl ${resultData[getResult()].color} p-8 mb-8 flex flex-col items-center justify-center border border-white shadow-xl shadow-slate-200/50`}>
+            <div className={`rounded-[32px] ${resultData[getResult()].color} p-8 mb-8 flex flex-col items-center justify-center border border-white shadow-xl shadow-slate-200/50`}>
               <div className="mb-6 bg-white p-5 rounded-3xl shadow-md transform -rotate-3 hover:rotate-0 transition-transform">
                 {resultData[getResult()].icon}
               </div>
-              <span className="inline-block px-5 py-1.5 bg-indigo-800 rounded-full text-xs font-black text-white shadow-md mb-6 uppercase tracking-widest">
+
+              <span className="inline-block px-6 py-2 bg-indigo-800 rounded-full text-xs font-black text-white shadow-md mb-4 uppercase tracking-[0.15em]">
                 {resultData[getResult()].type}
               </span>
-              <p className="text-slate-700 leading-relaxed break-keep text-center font-bold text-lg">
+
+              {/* 해시태그 섹션 */}
+              <div className="flex flex-wrap justify-center gap-2 mb-6 px-2">
+                {resultData[getResult()].tags.map((tag, i) => (
+                  <span key={i} className="text-indigo-700 font-bold text-sm bg-white/70 px-3 py-1 rounded-xl border border-indigo-100 shadow-sm">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <p className="text-slate-700 leading-relaxed break-keep text-center font-bold text-lg px-2">
                 {resultData[getResult()].desc}
               </p>
             </div>
@@ -304,9 +321,9 @@ const App = () => {
             <div className="space-y-4 mb-10">
               <button
                 onClick={copyToClipboard}
-                className="w-full py-4 bg-indigo-900 text-white rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-slate-900 transition-all shadow-lg active:scale-95"
+                className="w-full py-4 bg-indigo-900 text-white rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-slate-900 transition-all shadow-lg active:scale-95 text-lg"
               >
-                <Share2 className="w-5 h-5" /> 결과 공유하기
+                <Share2 className="w-6 h-6" /> 결과 공유하기
               </button>
               <button
                 onClick={restart}
@@ -316,18 +333,19 @@ const App = () => {
               </button>
             </div>
 
-            {/* 커뮤니티 섹션: 폰트 크기 및 여백 상향 조정 */}
-            <div className="bg-slate-900 rounded-3xl p-8 text-center shadow-xl">
-              <p className="text-indigo-400 text-base font-black mb-3 tracking-widest">💡 NEXT STEP</p>
-              <p className="text-slate-300 text-sm mb-5 leading-relaxed font-medium">
+            {/* 커뮤니티 섹션: 폰트 및 여백 대폭 강화 */}
+            <div className="bg-slate-900 rounded-[36px] p-10 text-center shadow-2xl border border-slate-800">
+              <p className="text-indigo-400 text-lg font-black mb-4 tracking-[0.25em] uppercase italic">💡 NEXT STEP</p>
+              <div className="text-slate-200 text-base mb-8 leading-relaxed font-medium">
                 놓치면 손해인 물리치료사들의 로드맵!<br />
-                <span className="text-white text-lg font-bold">PT MAP</span>에서 당신의 커리어를 완성하세요.
-              </p>
+                <span className="text-white text-3xl font-black block mt-3 mb-1 tracking-tighter">PT MAP</span>
+                <span className="text-slate-400 text-sm font-bold tracking-tight">에서 당신의 커리어를 완성하세요.</span>
+              </div>
               <button
                 onClick={() => window.open(COMMUNITY_URL, '_blank')}
-                className="w-full py-4 bg-indigo-700 text-white rounded-2xl font-bold text-base hover:bg-indigo-600 transition-all active:scale-95 shadow-lg"
+                className="w-full py-5 bg-indigo-600 text-white rounded-[20px] font-black text-xl hover:bg-indigo-500 transition-all active:scale-95 shadow-[0_10px_30px_rgba(79,70,229,0.5)] flex items-center justify-center gap-2"
               >
-                커뮤니티 바로가기 (PT맵)
+                커뮤니티 바로가기
               </button>
             </div>
           </div>
@@ -335,9 +353,9 @@ const App = () => {
       </div>
 
       {/* Background Decorative Elements */}
-      <div className="fixed -z-10 top-0 left-0 w-full h-full overflow-hidden opacity-30 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-indigo-200 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-blue-200 rounded-full blur-[100px]" />
+      <div className="fixed -z-10 top-0 left-0 w-full h-full overflow-hidden opacity-40 pointer-events-none">
+        <div className="absolute top-[-25%] left-[-15%] w-[600px] h-[600px] bg-indigo-200 rounded-full blur-[140px]" />
+        <div className="absolute bottom-[-15%] right-[-15%] w-[500px] h-[500px] bg-blue-200 rounded-full blur-[120px]" />
       </div>
     </div>
   );
