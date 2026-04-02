@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronRight, RefreshCcw, Share2, Clipboard, Brain, Activity, BookOpen, Dumbbell, Building2, Coffee } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronRight, RefreshCcw, Share2, Brain, Activity, BookOpen, Dumbbell, Building2, Coffee } from 'lucide-react';
 
 const App = () => {
   const [step, setStep] = useState('start'); // start, quiz, result
@@ -13,6 +13,9 @@ const App = () => {
     routine: 0
   });
   const [answers, setAnswers] = useState([]);
+
+  // 인스타그램 커뮤니티 링크
+  const COMMUNITY_URL = "https://www.instagram.com/the.pt.map?igsh=MWIwOTV2OTY1Y2loaw==";
 
   const questions = [
     {
@@ -135,7 +138,7 @@ const App = () => {
     research: {
       title: "논문 읽는 전략가",
       type: "대학원생 / 연구원",
-      desc: "당신은 '왜?'라는 질문을 멈추지 않는 근거 중심의 완벽주의자입니다. 임상도 좋지만, 이론을 체계화하고 새로운 지식을 발견하는 데 더 큰 희열을 느낍니다. 미래의 물리치료학계를 이끌 교수의 싹이 보입니다!",
+      desc: "당신은 '왜?'라는 질문을 멈추지 않는 근거 중심의 완벽주의자입니다. 임상도 좋지만, 이론을 체계화하고 새로운 지식을 발견하는 데 더 큰 희열을 느깁니다. 미래의 물리치료학계를 이끌 교수의 싹이 보입니다!",
       icon: <BookOpen className="w-16 h-16 text-emerald-600" />,
       color: "bg-emerald-50"
     },
@@ -280,7 +283,7 @@ const App = () => {
         {step === 'result' && (
           <div className="flex-1 flex flex-col p-6 overflow-y-auto">
             <div className="text-center mb-8">
-              <div className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-black mb-3 tracking-widest">ANALYSIS COMPLETE</div>
+              <div className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-black mb-3 tracking-widest">PT MAP 진단결과 🔍</div>
               <h2 className="text-3xl font-black text-slate-900 leading-tight break-keep">
                 {resultData[getResult()].title}
               </h2>
@@ -313,14 +316,18 @@ const App = () => {
               </button>
             </div>
 
-            <div className="bg-slate-900 rounded-3xl p-6 text-center shadow-xl">
-              <p className="text-indigo-400 text-sm font-black mb-2 tracking-widest">💡 NEXT STEP</p>
-              <p className="text-slate-300 text-xs mb-4 leading-relaxed font-medium">
-                남색 테마가 마음에 드셨나요?<br />
-                더 깊이 있는 전문가들의 이야기가 커뮤니티에 있습니다.
+            {/* 커뮤니티 섹션: 폰트 크기 및 여백 상향 조정 */}
+            <div className="bg-slate-900 rounded-3xl p-8 text-center shadow-xl">
+              <p className="text-indigo-400 text-base font-black mb-3 tracking-widest">💡 NEXT STEP</p>
+              <p className="text-slate-300 text-sm mb-5 leading-relaxed font-medium">
+                놓치면 손해인 물리치료사들의 로드맵!<br />
+                <span className="text-white text-lg font-bold">PT MAP</span>에서 당신의 커리어를 완성하세요.
               </p>
-              <button className="w-full py-3 bg-indigo-700 text-white rounded-xl font-bold text-sm hover:bg-indigo-600 transition-colors">
-                커뮤니티 바로가기
+              <button
+                onClick={() => window.open(COMMUNITY_URL, '_blank')}
+                className="w-full py-4 bg-indigo-700 text-white rounded-2xl font-bold text-base hover:bg-indigo-600 transition-all active:scale-95 shadow-lg"
+              >
+                커뮤니티 바로가기 (PT맵)
               </button>
             </div>
           </div>
