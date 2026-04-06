@@ -323,7 +323,7 @@ const App = () => {
                 onClick={copyToClipboard}
                 className="w-full py-4 bg-indigo-900 text-white rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-slate-900 transition-all shadow-lg active:scale-95 text-lg"
               >
-                <Share2 className="w-6 h-6" /> 결과 공유하기
+                <Share2 className="w-6 h-6" /> 링크 복사하기
               </button>
               <button
                 onClick={restart}
