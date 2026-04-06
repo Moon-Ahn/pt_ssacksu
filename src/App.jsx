@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, RefreshCcw, Share2, Brain, Activity, BookOpen, Dumbbell, Building2, Coffee } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
   const [step, setStep] = useState('start'); // start, quiz, result
@@ -140,7 +141,7 @@ const App = () => {
     research: {
       title: "논문 읽는 전략가",
       type: "대학원생 / 연구원",
-      desc: "당신은 '왜?'라는 질문을 멈추지 않는 근거 중심의 완벽주의자입니다. 임상도 좋지만, 이론을 체계화하고 새로운 지식을 발견하는 데 더 큰 희열을 느낍니다. 미래의 물리치료학계를 이끌 교수의 싹이 보입니다!",
+      desc: "당신은 '왜?'라는 질문을 멈추지 않는 근거 중심의 완벽주의자입니다. 임상도 좋지만, 이론을 체계화하고 새로운 지식을 발견하는 데 더 ��� 희열을 느낍니다. 미래의 물리치료학계를 이끌 교수의 싹이 보입니다!",
       tags: ["#대학원이체질", "#교수찰떡", "#논문은나의운명", "#학구열폭발"],
       icon: <BookOpen className="w-16 h-16 text-emerald-600" />,
       color: "bg-emerald-50"
@@ -157,7 +158,7 @@ const App = () => {
       title: "갓생 보건관리자",
       type: "산업체 물리치료사",
       desc: "당신은 병원이라는 틀을 벗어나 더 넓은 시스템을 설계하고 싶은 야망가입니다. 기업의 근로 환경을 관리하고 헬스케어 비즈니스를 기획하는 대기업 보건관리자나 스타트업이 당신의 무대입니다!",
-      tags: ["#사원증플렉스", "#갓생러", "#병원밖은즐거워", "#보건관리자의삶"],
+      tags: ["#사원증플렉스", "#갓생러", "#병원밖은즐거워", "#보건관리자의��"],
       icon: <Building2 className="w-16 h-16 text-slate-600" />,
       color: "bg-slate-50"
     },
@@ -357,6 +358,7 @@ const App = () => {
         <div className="absolute top-[-25%] left-[-15%] w-[600px] h-[600px] bg-indigo-200 rounded-full blur-[140px]" />
         <div className="absolute bottom-[-15%] right-[-15%] w-[500px] h-[500px] bg-blue-200 rounded-full blur-[120px]" />
       </div>
+      <Analytics />
     </div>
   );
 };
