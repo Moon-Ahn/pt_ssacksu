@@ -74,11 +74,14 @@ const App = () => {
             <button onClick={() => setStep('quiz')} className="w-full py-5 bg-indigo-800 text-white rounded-2xl font-bold text-xl shadow-lg active:scale-95 transition-all mb-8">테스트 시작하기</button>
 
             {/* 시작 페이지 광고 */}
-            <div className="flex justify-center overflow-hidden w-full">
-              <ins className="kakao_ad_area" style={{ display: 'none' }}
-                data-ad-unit="DAN-759Dqui0igvOIbst"
-                data-ad-width="320"
-                data-ad-height="50"></ins>
+            <div className="flex justify-center items-center w-full overflow-hidden py-2">
+              <div className="inline-block min-w-[320px] max-w-full overflow-hidden">
+                <ins className="kakao_ad_area"
+                     style={{ display: 'none', margin: '0 auto' }}
+                     data-ad-unit="DAN-759Dqui0igvOIbst"
+                     data-ad-width="320"
+                     data-ad-height="50"></ins>
+              </div>
             </div>
 
             <p className="mt-6 text-sm text-slate-400 font-medium tracking-widest uppercase">10 Questions | @the.pt.map</p>
